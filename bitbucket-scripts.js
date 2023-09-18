@@ -1,5 +1,6 @@
 // Desc: Use merge script with additional logic that ignores rule for specific branches.
 // script: Require a minimum number of approvers
+// ******************
 def notFromMaster = !(mergeRequest.pullRequest.fromRef.displayId == "master")
 def notFromRelease = !mergeRequest.pullRequest.fromRef.displayId.matches("release/v.*")
 def toDev = mergeRequest.pullRequest.toRef.displayId == "dev"
@@ -12,3 +13,4 @@ log.warn(
 )
 
 return notFromMaster && notFromRelease && toDev
+// ****************** //
