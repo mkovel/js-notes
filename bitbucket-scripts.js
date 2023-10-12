@@ -1,4 +1,5 @@
 // Desc: Use merge script with additional logic that ignores rule for specific branches.
+// SCRIPTRUNNER > Merge Checks > Require a minimum number of approvers
 // script: Require a minimum number of approvers
 // ******************
 def notFromMaster = !(mergeRequest.pullRequest.fromRef.displayId == "master")
